@@ -34,7 +34,7 @@ module Socialization
       #
       # @param [Class] klass the {Follower} class to be included. e.g. `User`
       # @return [Array<Follower, Numeric>] An array of Follower objects or IDs
-      def followers(klass, opts = {})
+      def followers(klass = self.class, opts = {})
         Socialization.follow_model.followers(self, klass, opts)
       end
 

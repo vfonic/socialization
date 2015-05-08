@@ -69,10 +69,11 @@ module Socialization
       # @params [Followable] klass the type of {Followable} you want
       # @params [Hash] opts a hash of options
       # @return [Array<Followable, Numeric>] An array of Followable objects or IDs
-      def followables(klass, opts = {})
+      def followables(klass = self.class, opts = {})
         Socialization.follow_model.followables(self, klass, opts)
       end
       alias :followees :followables
+      alias :following :followables
 
       # Returns a relation for all the followables of a certain type that are followed by self
       #
